@@ -1,5 +1,5 @@
 
-#Expense-Tracker
+# Expense-Tracker web application
 
 
 
