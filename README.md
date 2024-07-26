@@ -1,6 +1,8 @@
 
 # Expense-Tracker web application
 
+Technologies: ReactJS , Firebase (Auth and Firebase Fistore)
+
 
 
 # React + Vite
@@ -13,7 +15,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-# How to ru this project?
+# How to run this project?
 
 1. install npm and vite
 2. then type "npm run dev" in the terminal
