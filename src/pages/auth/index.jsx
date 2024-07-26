@@ -1,11 +1,16 @@
 import {auth , provider} from '../../config/firebase-config';
 import {signInWithPopup} from 'firebase/auth'
-import {useNavigate} from 'react-router-dom';
+import { useEffect } from 'react';
+import {useNavigate , Navigate} from 'react-router-dom';
+
+import { useGetUserInfo } from '../../hooks/useGetUserInfo';
 
 
 export const Auth = ()=>{
 
     const navigate= useNavigate() // use to redirect after login
+
+    const {isAuth} = useGetUserInfo();
 
 const SignInWithGoogle = async ()=>{
     const results = await signInWithPopup(auth,provider);   // results contain everything relatd to the user that signed in
@@ -18,6 +23,14 @@ const SignInWithGoogle = async ()=>{
     localStorage.setItem('auth',JSON.stringify(authInfo));
     navigate("/expense-tracker");  // will be redirected to expense-tracker page after login...
 }   
+
+// if user has already logged in
+
+useEffect(()=>{
+    if(isAuth){
+        navigate("/expense-tracker")
+    }
+},[]);
 
     return (
         <div className="login-page">
