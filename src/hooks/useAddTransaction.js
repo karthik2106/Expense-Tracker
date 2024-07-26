@@ -6,7 +6,7 @@ import { useGetUserInfo } from './useGetUserInfo';
 export default function useAddTransaction(){
 
     
-    let transactionCollectionRef = collection(db,"transactions");
+    let transactionCollectionRef = collection(db,"transactions");  //get the collection reference
     const {userID} = useGetUserInfo();
 
     const addTransaction = async ({

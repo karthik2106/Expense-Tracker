@@ -5,7 +5,7 @@ import {useNavigate} from 'react-router-dom';
 
 export const Auth = ()=>{
 
-    const {navigate}= useNavigate() // use to redirect after login
+    const navigate= useNavigate() // use to redirect after login
 
 const SignInWithGoogle = async ()=>{
     const results = await signInWithPopup(auth,provider);   // results contain everything relatd to the user that signed in
@@ -21,7 +21,7 @@ const SignInWithGoogle = async ()=>{
 
     return (
         <div className="login-page">
-            <p>Sign in wit Google to continue</p>
+            <p>Sign in with Google to continue</p>
             <button className="login-with-google-btn" onClick={SignInWithGoogle}>
                 {""}
                 Sign In with Google

@@ -6,7 +6,7 @@ import Transaction from "./Transaction"   // its a component
 
 export const ExpenseTracker = ()=>{
     const {addTransaction} = useAddTransaction();
-    ;
+    //const {transactions} = useGetTransactions();
     
 
     const [transactionInput,setTransactionInput] = useState({
@@ -28,7 +28,7 @@ export const ExpenseTracker = ()=>{
         addTransaction(transactionInput);
     };
 
-    console.log(transactionInput);
+    
     return(
         <>
         <div className="expense-tracker">
