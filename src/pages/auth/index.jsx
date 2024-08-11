@@ -197,7 +197,7 @@ const handleSignUp = ()=>{
                     </div>
 
                     <div className='login-pic'>
-                        <img src="../../public/expense-categories.webp" alt="" />
+                        <img src="../../public/expense-categories_converted.jpg" alt="" />
                     </div>
                 </div>
                 )
