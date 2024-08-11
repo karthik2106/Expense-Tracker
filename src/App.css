@@ -1,7 +1,66 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@keyframes colorChange {
+  0% { background-color: #ff0000; }
+  25% { background-color: #00ff00; }
+  50% { background-color: #0000ff; }
+  75% { background-color: #ffff00; }
+  100% { background-color: #ff0000; }
 }
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f, 0 0 20px #00f;
+  }
+  50% {
+    text-shadow: 0 0 10px #00f, 0 0 15px #00f, 0 0 20px #00f, 0 0 25px #00f;
+  }
+  100% {
+    text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f, 0 0 20px #00f;
+  }
+}
+
+body{
+  margin: 0 0;
+}
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Optional: for better visibility */
+
+  background-image: linear-gradient(to bottom right, #5761B2, #1FC5A8);
+}
+
+.App{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  position: relative;
+
+  
+}
+
+
+.title{
+  position: absolute;
+  top: 1px;
+
+  font-family: 'roboto';
+  font-size: 2rem;
+
+
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  color: #fff;
+  animation: glow 1.5s infinite;
+}
+
+
 

@@ -7,6 +7,8 @@ import { ExpenseTracker } from './pages/expense-tracker'
 
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
+import TypingTitle from './pages/flippingText/TypingTitle'
+
 
 
 function App() {
@@ -14,6 +16,10 @@ function App() {
 
   return (
     <div className='App'>
+     
+     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <TypingTitle title="Expense Tracker" />
+    </div>
       <Router>
         <Routes>
           <Route path='/' exact element={<Auth />} />

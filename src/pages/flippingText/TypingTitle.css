@@ -1,0 +1,12 @@
+/* src/components/TypingTitle.css */
+.typing-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  color: #333;
+  border-right: 2px solid #333; /* Cursor effect */
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+}

@@ -9,7 +9,8 @@ export const useGetUserInfo = () => {
     let isAuth = false;
     
 console.log(rawData);
-    // Parse raw data if it exists, otherwise use default values
+    
+// Parse raw data if it exists, otherwise use default values
     if (rawData) {
         try {
             const parsedData = JSON.parse(rawData);

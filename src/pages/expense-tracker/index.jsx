@@ -9,10 +9,10 @@ import { useGetTransactions } from "../../hooks/useGetTransactions";  // hook fu
 import { useNavigate } from "react-router-dom";
 
 
-import Transaction from "./Transaction"   // its a component
+import Transaction from "./Transaction";   // its a component
 
 
-
+import './expense.css';
 
 export const ExpenseTracker = ()=>{
 
@@ -61,10 +61,14 @@ export const ExpenseTracker = ()=>{
     }
     
     return(
-        <>
+        <div className="expense">
         <div className="expense-tracker">
             <div className="container">
-                <h1>{name}'s <span>Expense Tracker</span></h1>
+               <div className="profile-data">
+               <h1>{name}'s <span>Expense Tracker</span></h1>
+               {profilePhoto && <div className="profile"><img className="profile-Photo" src={profilePhoto}/>
+            </div>}
+               </div> 
 
                 <div className="balance">
                     <h3>Your Balance</h3>
@@ -84,31 +88,37 @@ export const ExpenseTracker = ()=>{
                 </div>
 
                 <form action="" className="add-transactions" onSubmit={onSubmit}>
+                    <h2>Key in your transactions</h2>
 
+                    <div className="transaction-info">
+                        
                     <input type="text" placeholder="Description" name="description" value={transactionInput.description} onChange={handleChange} required  />
                     <input type="number" placeholder="Amount" name="transactionAmount" value={transactionInput.transactionAmount} onChange={handleChange} required />
-
-                    <input type="radio" id="expense" value="expense" name="transactionType"  onChange={handleChange} />
+                    </div>
+                    
+                    <div className="transaction-radio">
+                    <input type="radio" id="expense" value="expense" name="transactionType"  onChange={handleChange} className="expense-radio" />
                     <label htmlFor="expense">Expense</label>
 
-                    <input type="radio" id="income" value="income" name="transactionType" onChange={handleChange} />
+                    <input type="radio" id="income" value="income" name="transactionType" onChange={handleChange} className="income-radio" />
                     <label htmlFor="income">Income</label>
+                    </div>
                     
-                    <button type="submit" >Add transactions</button>
+                    
+                    <button type="submit" className="add-transaction-btn" >Add transactions</button>
 
                 </form>
 
                 
             </div>
-            {profilePhoto && <div className="profile"><img className="profile-Photo" src={profilePhoto}/></div>}
+            
 
             <button className="sign-out-button" onClick={signUserOut}>
                 Sign Out
             </button>
         </div>
             <Transaction />
-
-        </>
+            </div>
 
     )
 }

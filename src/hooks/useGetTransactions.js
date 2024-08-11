@@ -19,9 +19,9 @@ export  const useGetTransactions = () =>{
             
         try{
             const queryTransactions = query(transactionCollectionRef,where("userID","==",userID),
-        orderBy("createdAt") );
+            orderBy("createdAt") );
 
-          unsubscribe =  onSnapshot(queryTransactions,(snapshot)=>{  // the snapshot function is triggered everytime the querylist is updated(eg. a new trnasaction occurs for the userID)
+          unsubscribe =  onSnapshot(queryTransactions,(snapshot)=>{  // the snapshot function is triggered everytime the querylist is updated(eg. a new transaction occurs for the userID)
             let totalIncome =0;
             let totalExpense =0;
             let totalBalance=0;
